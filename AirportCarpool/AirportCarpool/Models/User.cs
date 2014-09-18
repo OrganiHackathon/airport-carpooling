@@ -8,7 +8,7 @@ namespace AirportCarpool.Models
 {
     public class User
     {
-        // Test gvh
+        // Test gvh 2
         // test pds
         public int UserId {get;set;}
         public string UserName {get; set;}
