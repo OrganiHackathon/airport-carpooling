@@ -162,9 +162,16 @@
     <Compile Include="Migrations\201409172111395_Flight.Designer.cs">
       <DependentUpon>201409172111395_Flight.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201409172122269_UserFlights.cs" />
+    <Compile Include="Migrations\201409172122269_UserFlights.Designer.cs">
+      <DependentUpon>201409172122269_UserFlights.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201409172123496_UserFlights2.cs" />
+    <Compile Include="Migrations\201409172123496_UserFlights2.Designer.cs">
+      <DependentUpon>201409172123496_UserFlights2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Flight.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -286,6 +293,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201409172111395_Flight.resx">
       <DependentUpon>201409172111395_Flight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409172122269_UserFlights.resx">
+      <DependentUpon>201409172122269_UserFlights.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201409172123496_UserFlights2.resx">
+      <DependentUpon>201409172123496_UserFlights2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
