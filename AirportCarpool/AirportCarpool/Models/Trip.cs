@@ -8,6 +8,7 @@ namespace AirportCarpool.Models
 {
     public class Trip
     {
+        //test tce
         public int TripId { get; set; }
         public int MaxSeats { get; set; }
         public int MaxLuggage { get; set; }
