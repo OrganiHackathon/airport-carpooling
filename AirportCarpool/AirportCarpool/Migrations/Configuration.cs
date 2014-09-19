@@ -5,14 +5,14 @@ namespace AirportCarpool.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<AirportCarpool.Models.UserDBContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<AirportCarpool.Models.AirportCarpoolDbContext>
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
-        protected override void Seed(AirportCarpool.Models.UserDBContext context)
+        protected override void Seed(AirportCarpool.Models.AirportCarpoolDbContext context)
         {
             //  This method will be called after migrating to the latest version.
 
