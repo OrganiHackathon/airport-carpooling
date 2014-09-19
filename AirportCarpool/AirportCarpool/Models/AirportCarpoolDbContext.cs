@@ -10,6 +10,7 @@ namespace AirportCarpool.Models
     {
         //public AirportCarpoolDbContext() : base("name=DefaultConnection") { }
 
+
         public DbSet<User> Users { get; set; }
         public DbSet<Flight> Flights { get; set; }
         public DbSet<UserFlight> UserFlights { get; set; }
