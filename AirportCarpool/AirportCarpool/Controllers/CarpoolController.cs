@@ -47,5 +47,11 @@ namespace AirportCarpool.Controllers {
             ViewBag.LocationFrom = new SelectList((new string[] { "Home", "Schiphol", "Other address" }).ToList());
             ViewBag.LocationTo = ViewBag.LocationFrom;
         }
+
+        public ActionResult NewMovementDetail(/*NewMovement newMovement,*/ int flightId)
+        {
+            return View("MovementDetail","");
+         
+        }
     }
 }

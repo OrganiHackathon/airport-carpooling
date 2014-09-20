@@ -1,0 +1,34 @@
+﻿@model IEnumerable<AirportCarpool.Models.Flight>
+
+@{
+    ViewBag.Title = "Choose your flight";
+}
+
+<h2>FlightList</h2>
+
+<ul data-role="listview" data-theme ="c" data-filter="true" >
+
+@*    <ul data-role="listview" data-theme="c">
+    @{
+        string name = String.Empty;
+             
+        foreach (MobileMvc.Models.EmployeeModel item in this.Model)
+        {
+            name = item.GetFullname(); 
+ 
+            <li>@Html.ActionLink(name, "Details/" + item.EmployeeID.ToString(), "Employee")</li>
+        }
+    }
+</ul>*@
+
+@foreach (var item in Model) {   
+     
+        <li>                
+           <h2>Flightnumber: @Html.DisplayFor(modelItem => item.FlightNumber)</h2>
+           <p><strong>Departure: @Html.DisplayFor(modelItem => item.Departure)</strong></p>
+           <p><strong>Arrival:  @Html.DisplayFor(modelItem => item.Arrival)</strong></p>
+            <p>@Html.ActionLink("Select", "NewMovementDetail", "Carpool",new {flightId = @item.FlightId},null)</p>
+        </li>   
+    
+}
+</ul>
