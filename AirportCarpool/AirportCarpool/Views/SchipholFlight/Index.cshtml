@@ -1,0 +1,38 @@
+﻿@model List<AirportCarpool.Models.SchipholFlight>
+
+@{
+    ViewBag.Title = "TestSchipholFlights";
+}
+
+<h2>TestSchipholFlights</h2>
+
+<div>
+    <h4>SchipholFlight</h4>
+	<hr />
+    @foreach(var item in Model)
+    {
+    <dl class="dl-horizontal">
+        <dt>
+            @item.FlightNumber)
+        </dt>
+
+        <dt>
+            @item.ScheduleDate)
+        </dt>
+
+        <dd>
+             @item.ScheduleDate)
+        </dd>
+
+        <dt>
+            @item.ScheduleTime)
+        </dt>
+
+
+    </dl>
+    }
+</div>
+<p>
+ 
+    @Html.ActionLink("Back to List", "Index")
+</p>
