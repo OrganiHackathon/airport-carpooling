@@ -12,7 +12,7 @@ namespace AirportCarpool.Models {
         public DbSet<Location> Locations { get; set; }
         public DbSet<MovementDetail> MovementDetails { get; set; }
         public DbSet<Carpool> Carpools { get; set; }
-
+         
         public System.Data.Entity.DbSet<AirportCarpool.Models.Flight> Flights { get; set; }
     }
 }
