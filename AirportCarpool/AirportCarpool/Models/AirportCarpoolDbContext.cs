@@ -4,17 +4,13 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 
-namespace AirportCarpool.Models
-{
-    public class AirportCarpoolDbContext: DbContext
-    {
-        //public AirportCarpoolDbContext() : base("name=DefaultConnection") { }
-
-
+namespace AirportCarpool.Models {
+    public class AirportCarpoolDbContext : DbContext {
+        
         public DbSet<User> Users { get; set; }
-        public DbSet<Flight> Flights { get; set; }
-        public DbSet<UserFlight> UserFlights { get; set; }
-        public DbSet<Trip> Trips { get; set; }
-        public DbSet<TripType> TripTypes { get; set; }
+        public DbSet<Movement> Movements { get; set; }
+        public DbSet<Location> Locations { get; set; }
+        public DbSet<MovementDetail> MovementDetails { get; set; }
+        public DbSet<Carpool> Carpools { get; set; }
     }
 }
