@@ -15,5 +15,6 @@ namespace AirportCarpool.Models
         public DateTime ArrivalOnAirport { get; set; }
         public int MaxKm { get; set; }
         public string Status { get; set; }
+        public TripType TripType { get; set; }
     }
 }

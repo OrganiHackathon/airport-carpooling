@@ -178,6 +178,7 @@
     <Compile Include="Models\Flight.cs" />
     <Compile Include="Models\SchipholFlight.cs" />
     <Compile Include="Models\Trip.cs" />
+    <Compile Include="Models\TripType.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserFlight.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
