@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using System.Web.Routing;
 using System.Web.Security;
 using AirportCarpool.Models;
+using WebMatrix.WebData;
 
 namespace AirportCarpool.Controllers
 {
@@ -15,6 +16,7 @@ namespace AirportCarpool.Controllers
     {
         //
         // GET: /Account/Index
+
 
         public ActionResult Index()
         {
@@ -93,8 +95,19 @@ namespace AirportCarpool.Controllers
             {
                 // Attempt to register the user
                 MembershipCreateStatus createStatus;
-                Membership.CreateUser(model.UserName, model.Password, model.Email, passwordQuestion: null, passwordAnswer: null, isApproved: true, providerUserKey: null, status: out createStatus);
+                MembershipUser memberShipUser;
+                
+                //controle of user al bestaat
+                if (Membership.GetUser(model.UserName) == null){
 
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);               
+                    Roles.AddUserToRole(model.UserName, "user"); //todo: roles niet hardcoden
+                                    
+                    memberShipUser = Membership.GetUser(model.UserName);
+                    memberShipUser.Email = model.Email;
+
+                    Membership.UpdateUser(memberShipUser);
+                    createStatus = MembershipCreateStatus.Success;
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
@@ -103,6 +116,10 @@ namespace AirportCarpool.Controllers
                 else
                 {
                     ModelState.AddModelError("", ErrorCodeToString(createStatus));
+                }
+            }
+                else {
+                    ModelState.AddModelError("", "User already exists");
                 }
             }
 
@@ -218,7 +235,5 @@ namespace AirportCarpool.Controllers
             }
         }
         #endregion
-
-        
     }
 }

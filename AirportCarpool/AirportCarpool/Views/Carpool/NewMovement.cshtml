@@ -1,0 +1,103 @@
+﻿@model AirportCarpool.Models.NewMovement
+@{
+    ViewBag.Title = "New movement";
+}
+
+<h2>New movement</h2>
+
+@using (Html.BeginForm("NewMovement", "Carpool", FormMethod.Post)) {
+    
+    <div class="form-group">
+        @Html.LabelFor(model => model.LocationFrom, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("LocationFrom");
+        </div>
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(model => model.StreetFrom, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.StreetFrom)
+            @Html.ValidationMessageFor(model => model.StreetFrom)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.StreetNrFrom, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.StreetNrFrom)
+            @Html.ValidationMessageFor(model => model.StreetNrFrom)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PostalCodeFrom, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PostalCodeFrom)
+            @Html.ValidationMessageFor(model => model.PostalCodeFrom)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CityFrom, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CityFrom)
+            @Html.ValidationMessageFor(model => model.CityFrom)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CountryFrom, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CountryFrom)
+            @Html.ValidationMessageFor(model => model.CountryFrom)
+        </div>
+    </div>
+    
+     <div class="form-group">
+        @Html.LabelFor(model => model.LocationTo, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownList("LocationTo");
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.StreetTo, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.StreetTo)
+            @Html.ValidationMessageFor(model => model.StreetTo)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.StreetNrTo, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.StreetNrTo)
+            @Html.ValidationMessageFor(model => model.StreetNrTo)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PostalCodeTo, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PostalCodeTo)
+            @Html.ValidationMessageFor(model => model.PostalCodeTo)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CityTo, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CityTo)
+            @Html.ValidationMessageFor(model => model.CityTo)
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.CountryTo, new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.CountryTo)
+            @Html.ValidationMessageFor(model => model.CountryTo)
+        </div>
+    </div>
+}

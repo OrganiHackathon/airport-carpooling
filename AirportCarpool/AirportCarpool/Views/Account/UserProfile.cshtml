@@ -27,7 +27,7 @@
         <li data-role="fieldcontain">
             @Html.LabelFor(m => m.Email)
             @Html.TextBoxFor(m => m.Email)            
-        </li>  
+        </li>
     </ul>
     <p>@Html.ActionLink("Address", "Location", "Account", null, new { @data_role = "button" })</p>
     <p>@Html.ActionLink("Change password", "ChangePassword", "Account", routeValues: null, htmlAttributes: new { data_icon = "gear" })</p>
