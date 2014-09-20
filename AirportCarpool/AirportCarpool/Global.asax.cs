@@ -6,6 +6,7 @@ using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using WebMatrix.WebData;
 
 namespace AirportCarpool {
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
@@ -15,6 +16,8 @@ namespace AirportCarpool {
         protected void Application_Start() {
             AreaRegistration.RegisterAllAreas();
 
+            WebSecurity.InitializeDatabaseConnection("AirportCarpoolDbContext", "Users", "UserId", "UserName", true); 
+            
             //WebApiConfig.Register(GlobalConfiguration.Configuration);
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
