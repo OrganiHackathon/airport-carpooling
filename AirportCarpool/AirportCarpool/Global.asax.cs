@@ -14,11 +14,9 @@ namespace AirportCarpool {
 
     public class MvcApplication : System.Web.HttpApplication {
         protected void Application_Start() {
-       //     WebSecurity.InitializeDatabaseConnection("AirportCarpoolDbContext", "Users", "UserId", "UserName", true); 
+            WebSecurity.InitializeDatabaseConnection("AirportCarpoolDbContext", "Users", "UserId", "UserName", true); 
             AreaRegistration.RegisterAllAreas();
 
-        //    WebSecurity.InitializeDatabaseConnection("AirportCarpoolDbContext", "Users", "UserId", "UserName", true); 
-            
             //WebApiConfig.Register(GlobalConfiguration.Configuration);
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
