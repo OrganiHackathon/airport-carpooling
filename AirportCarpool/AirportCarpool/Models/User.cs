@@ -21,6 +21,7 @@ namespace AirportCarpool.Models
         public string GeoLocation {get;set;}
         public string Country {get;set;}
         public ICollection<Flight> Flights { get; set; }
+        
     }
 
 
