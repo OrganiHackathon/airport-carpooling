@@ -448,6 +448,7 @@
     <Content Include="Scripts\knockout-3.2.0.debug.js" />
     <Content Include="Scripts\knockout-3.2.0.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Site.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -481,8 +482,6 @@
     </Content>
     <Content Include="Views\Account\Location.cshtml" />
     <Content Include="Views\Carpool\NewMovement.cshtml" />
-    <Content Include="Views\Carpool\NewMovement3.cshtml" />
-    <Content Include="Views\Carpool\NewMovement2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
