@@ -183,6 +183,7 @@
     <Compile Include="Models\UserRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FlightService.cs" />
+    <Compile Include="Services\MovementService.cs" />
     <Compile Include="Testing\TestClass.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -504,12 +505,14 @@
     <Content Include="Views\Trip\NewTrip03.cshtml" />
     <Content Include="Views\Trip\NewTrip04.cshtml" />
     <Content Include="Views\Trip\NewTripDefaultView.cshtml" />
+    <Content Include="Views\Trip\NewTrip02.cshtml" />
     <Content Include="Views\Location\_Details.cshtml" />
     <Content Include="Views\Location\_Edit.cshtml" />
     <Content Include="Views\User\UserLocation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

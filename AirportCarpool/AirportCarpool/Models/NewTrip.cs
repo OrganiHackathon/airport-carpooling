@@ -80,6 +80,15 @@ namespace AirportCarpool.Models {
         [DisplayName("Departure or arrival")]
         public string MovementDateType { get; set; } // Departure / Arrival
 
+        [DisplayName("Flight number")]
+        public string FlightNumber { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:t}")]
+        public DateTime Departure { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:t}")]
+        public DateTime Arrival { get; set; }        
+
         public NewTrip() {
             Seats = 1;
             MaxSeats = 5;
