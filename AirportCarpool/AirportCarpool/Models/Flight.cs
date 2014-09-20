@@ -9,7 +9,7 @@ namespace AirportCarpool.Models {
         public string FlightNumber { get; set; }
         public DateTime Date { get; set; }
         public DateTime Departure { get; set; }
-        public DateTime Arrival { get; set; }
+        public DateTime Arrival { get; set; }        
 
     }
 }

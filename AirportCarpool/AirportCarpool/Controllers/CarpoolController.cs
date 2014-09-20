@@ -12,6 +12,11 @@ namespace AirportCarpool.Controllers {
             return View();
         }
 
+        public ActionResult NewCarpool()
+        {
+            return View();
+        }
+
         public ActionResult NewMovement() {
             ViewBag.LocationFrom = new SelectList((new string[] {"Home", "Schiphol", "Other address"}).ToList());
             ViewBag.LocationTo = ViewBag.LocationFrom;

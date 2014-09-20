@@ -1,0 +1,65 @@
+﻿@model AirportCarpool.Models.Carpool
+
+@{
+    ViewBag.Title = "NewCarpool";
+}
+
+<h2>NewCarpool</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Carpool</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaxSeats, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaxSeats)
+                @Html.ValidationMessageFor(model => model.MaxSeats)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaxLuggage, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaxLuggage)
+                @Html.ValidationMessageFor(model => model.MaxLuggage)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MaxKm, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.MaxKm)
+                @Html.ValidationMessageFor(model => model.MaxKm)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Arrival, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Arrival)
+                @Html.ValidationMessageFor(model => model.Arrival)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
