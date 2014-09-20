@@ -159,6 +159,7 @@
     <Compile Include="Controllers\CarpoolController.cs" />
     <Compile Include="Controllers\FlightController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LocationController.cs" />
     <Compile Include="Controllers\TripController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
@@ -503,11 +504,12 @@
     <Content Include="Views\Trip\NewTrip03.cshtml" />
     <Content Include="Views\Trip\NewTrip04.cshtml" />
     <Content Include="Views\Trip\NewTripDefaultView.cshtml" />
-    
+    <Content Include="Views\Location\_Details.cshtml" />
+    <Content Include="Views\Location\_Edit.cshtml" />
+    <Content Include="Views\User\UserLocation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

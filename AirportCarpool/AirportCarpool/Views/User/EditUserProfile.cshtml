@@ -33,7 +33,7 @@
     </ul>
     
 
-    <p>@Html.ActionLink("Address", "Location", "Account", new {id = Model.UserId} ,  new { @data_role = "button" })</p>
+    <p>@Html.ActionLink("Address",  "UserLocation", "User", Model,  new { @data_role = "button" })</p>
     <p>@Html.ActionLink("Back", "Index", "User", new {id = Model.UserName}  , new { @data_role = "button" })</p>
     <!--<p>@Html.ActionLink("Change password", "ChangePassword", "Account", routeValues: Model, htmlAttributes: new {  data_icon = "gear" })</p>-->
     <ul data-role="listview" data-inset="true">

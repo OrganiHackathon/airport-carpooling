@@ -86,6 +86,10 @@ namespace AirportCarpool.Controllers
 
             return RedirectToAction("Index", "Home");
         }
+        [Authorize]
+        public ActionResult UserLocation(User user) {
+            return View(user);
+        }
 
         private User GetUserByUserName(string userName) {
             return (from u in _db.Users
