@@ -20,11 +20,11 @@ namespace AirportCarpool.Controllers {
 
         public ActionResult NewMovement() {
             NewMovementFillViewBag();
-            return View(new NewMovement());
+            return View(new NewTrip());
         }
 
         [HttpPost]
-        public ActionResult NewMovement(NewMovement newMovement) {
+        public ActionResult NewMovement(NewTrip newMovement) {
             var locationFrom = newMovement.LocationFrom;
             var locationTo = newMovement.LocationTo;
 

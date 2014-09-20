@@ -159,6 +159,7 @@
     <Compile Include="Controllers\CarpoolController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SchipholFlightController.cs" />
+    <Compile Include="Controllers\TripController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -176,7 +177,7 @@
     <Compile Include="Models\Movement.cs" />
     <Compile Include="Models\MovementDetail.cs" />
     <Compile Include="Models\SchipholFlight.cs" />
-    <Compile Include="Models\NewMovement.cs" />
+    <Compile Include="Models\NewTrip.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FlightService.cs" />
@@ -491,6 +492,10 @@
     <Content Include="Views\Carpool\NewMovement3.cshtml" />
     <Content Include="Views\Carpool\NewMovement2.cshtml" />
     <Content Include="Views\Carpool\NewCarpool.cshtml" />
+    <Content Include="Views\Trip\NewTrip01.cshtml" />
+    <Content Include="Views\Trip\NewTrip03.cshtml" />
+    <Content Include="Views\Trip\NewTrip04.cshtml" />
+    <Content Include="Views\Trip\NewTripDefaultView.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

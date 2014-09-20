@@ -6,7 +6,7 @@ using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
 namespace AirportCarpool.Models {
-    public class NewMovement {
+    public class NewTrip {
         [DisplayName("From")]
         public string LocationFrom { get; set; }
         
@@ -69,7 +69,18 @@ namespace AirportCarpool.Models {
         [Range(0, 1000)]
         public int MaxKm { get; set; }
 
-        public NewMovement() {
+        [DisplayName("Date")]
+        [DataType(DataType.Date)]
+        public DateTime MovementDate { get; set; }
+
+        [DisplayName("Time")]
+        [DataType(DataType.Time)]
+        public DateTime MovementTime { get; set; }
+
+        [DisplayName("Departure or arrival")]
+        public string MovementDateType { get; set; } // Departure / Arrival
+
+        public NewTrip() {
             Seats = 1;
             MaxSeats = 5;
             MaxLuggage = 3;

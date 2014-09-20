@@ -34,21 +34,21 @@ namespace AirportCarpool.Testing
             }
         }
 
-         [TestMethod]
-         public void TestFlightServiceByFlightNumber()
-         {
-             DateTime departure;
-             Flight flight;
+         //[TestMethod]
+         //public void TestFlightServiceByFlightNumber()
+         //{
+         //    DateTime departure;
+         //    Flight flight;
 
-             departure = DateTime.Now;
+         //    departure = DateTime.Now;
 
-             flightService = new FlightService();
+         //    flightService = new FlightService();
 
-             flight = flightService.SearchFlightByFlightNumber("OR544","A");
+         //    flight = flightService.SearchFlightByFlightNumber("OR544","A");
 
             
-             Console.WriteLine(flight.FlightNumber + ";" + flight.Arrival + ";" + flight.Departure);
+         //    Console.WriteLine(flight.FlightNumber + ";" + flight.Arrival + ";" + flight.Departure);
              
-         }
+         //}
    }
 }
