@@ -169,6 +169,7 @@
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Movement.cs" />
     <Compile Include="Models\MovementDetail.cs" />
+    <Compile Include="Models\SchipholFlight.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
