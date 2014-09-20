@@ -155,6 +155,7 @@
     <Compile Include="Controllers\CarpoolController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SchipholFlightController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -473,6 +474,8 @@
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\Test\TestSchipholFlights.cshtml" />
+    <Content Include="Views\SchipholFlight\Index.cshtml" />
     <Content Include="Views\Account\UserProfile.cshtml">
       <SubType>Code</SubType>
     </Content>
@@ -483,6 +486,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
