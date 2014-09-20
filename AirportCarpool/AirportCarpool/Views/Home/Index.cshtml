@@ -1,14 +1,20 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Carpooling";
 }
 
-<h2>@ViewBag.Message</h2>
-<p>
-    To learn more about ASP.NET MVC visit <a href="http://asp.net/mvc" title="ASP.NET MVC Website">http://asp.net/mvc</a>.
-</p>
+<div class="notifications">
+    <h2>Notifications</h2>
+    <ul data-role="listview">
+        <li>Driver found for your trip on 21/09/2014.</li>
+    </ul>
+</div>
 
-<ul data-role="listview" data-inset="true">
-    <li data-role="list-divider">Navigation</li>
-    <li>@Html.ActionLink("About", "About", "Home")</li>
-    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-</ul>
+<div class="trips">
+    <h2>Trips</h2>
+    <ul data-role="listview">
+        <li>Going to Schiphol on 21/09/2014.</li>
+        <li>Returning from Schiphol on 24/09/2014.</li>
+    </ul>
+    <p>@Html.ActionLink("New trip", "NewTrip", "Home", null, new { @data_role = "button" })</p>
+    <p>@Html.ActionLink("Trip history", "TripHistory", "Home", null, new { @data_role = "button" })</p>
+</div>
