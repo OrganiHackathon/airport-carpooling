@@ -13,7 +13,7 @@ namespace AirportCarpool.Testing
     {
 
         FlightService flightService;
-
+        CarpoolService carpoolservice;
         
     
          [TestMethod]
@@ -33,6 +33,23 @@ namespace AirportCarpool.Testing
                 Console.WriteLine(flight.FlightNumber + ";" + flight.Arrival + ";" +  flight.Departure);
             }
         }
+            [TestMethod]
+         public void TestGetCarpoolsByDate()
+         {
+             DateTime arrival;
+             List<Carpool> carpools;
+
+             arrival = DateTime.Now;
+
+             carpoolservice = new CarpoolService();
+
+             carpools = carpoolservice.FindCarpoolsByDateTime(arrival);
+
+             foreach (Carpool carpool in carpools)
+             {
+                 Console.WriteLine(carpool.CarpoolId + ";" + carpool.Status + ";" + carpool.MaxSeats);
+             }
+         }
 
          //[TestMethod]
          //public void TestFlightServiceByFlightNumber()
