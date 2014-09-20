@@ -155,30 +155,19 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201409172100240_ExtraFields.cs" />
-    <Compile Include="Migrations\201409172100240_ExtraFields.Designer.cs">
-      <DependentUpon>201409172100240_ExtraFields.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409172111395_Flight.cs" />
-    <Compile Include="Migrations\201409172111395_Flight.Designer.cs">
-      <DependentUpon>201409172111395_Flight.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409172122269_UserFlights.cs" />
-    <Compile Include="Migrations\201409172122269_UserFlights.Designer.cs">
-      <DependentUpon>201409172122269_UserFlights.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409172123496_UserFlights2.cs" />
-    <Compile Include="Migrations\201409172123496_UserFlights2.Designer.cs">
-      <DependentUpon>201409172123496_UserFlights2.cs</DependentUpon>
+    <Compile Include="Migrations\201409201228368_Initial.cs" />
+    <Compile Include="Migrations\201409201228368_Initial.Designer.cs">
+      <DependentUpon>201409201228368_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\AirportCarpoolDbContext.cs" />
+    <Compile Include="Models\Carpool.cs" />
     <Compile Include="Models\Flight.cs" />
-    <Compile Include="Models\Trip.cs" />
-    <Compile Include="Models\TripType.cs" />
+    <Compile Include="Models\Location.cs" />
+    <Compile Include="Models\Movement.cs" />
+    <Compile Include="Models\MovementDetail.cs" />
     <Compile Include="Models\User.cs" />
-    <Compile Include="Models\UserFlight.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -480,6 +469,7 @@
       <SubType>Designer</SubType>
     </Content>
     <Content Include="Views\Account\UserProfile.cshtml" />
+    <Content Include="Views\Shared\Location.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -489,17 +479,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201409172100240_ExtraFields.resx">
-      <DependentUpon>201409172100240_ExtraFields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409172111395_Flight.resx">
-      <DependentUpon>201409172111395_Flight.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409172122269_UserFlights.resx">
-      <DependentUpon>201409172122269_UserFlights.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409172123496_UserFlights2.resx">
-      <DependentUpon>201409172123496_UserFlights2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201409201228368_Initial.resx">
+      <DependentUpon>201409201228368_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

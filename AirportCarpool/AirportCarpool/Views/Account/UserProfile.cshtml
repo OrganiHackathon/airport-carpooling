@@ -1,4 +1,6 @@
-﻿@{
+﻿@model AirportCarpool.Models.User
+
+@{
     ViewBag.Title = "Profile";
 }
 
@@ -8,13 +10,34 @@
         <li data-role="list-divider">Details</li>
 
         <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.UserName, "Username")
+            @Html.TextBoxFor(m => m.UserName)            
+        </li>
+
+        <li data-role="fieldcontain">
             @Html.LabelFor(m => m.Name)
             @Html.TextBoxFor(m => m.Name)            
         </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.SurName, "Surname")
+            @Html.TextBoxFor(m => m.SurName)            
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email)            
+        </li>
+
+        <li> 
+            @Html.ActionLink("Address", "Location", "Shared", null, new { @data_role = "button" })
+        </li>
+
         <li data-role="fieldcontain">
             <input type="submit" value="Save" />
         </li>
     </ul>
+    <p>@Html.ActionLink("Change password", "ChangePassword", "Account", routeValues: null, htmlAttributes: new { data_icon = "gear" })</p>
 </div>
 
 @section Scripts {
