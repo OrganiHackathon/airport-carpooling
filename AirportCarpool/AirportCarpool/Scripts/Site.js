@@ -1,34 +1,17 @@
 ﻿
-//$(function () {
-//    var effectTime = 300; // ms
+$(function () {
+    $('.SelectFlightLink').click(function () {
+        var link = $(this);
+        var flightnr = link.attr('data-flightnr');
+        var arrival = link.attr('data-arrival');
+        var departure = link.attr('data-departure');
+        var arrdep = link.attr('data-arrdep');
+        $('#FlightNumber').val(flightnr);
+        $('#Arrival').val(arrival);
+        $('#Departure').val(departure);
+        $('#ArrDep').val(arrdep);
+        $('#SelectFlightForm').submit();
+        return false;
+    });
 
-//    $('#LocationFrom').change(function () {
-//        var value = $(this).val();
-//        if (value == 'Other address') {
-//            $('#OtherAddressFrom').show(effectTime);
-//        } else {
-//            $('#OtherAddressFrom').hide(effectTime);
-//        }
-//    });
-//    $('#LocationTo').change(function () {
-//        var value = $(this).val();
-//        if (value == 'Other address') {
-//            $('#OtherAddressTo').show(effectTime);
-//        } else {
-//            $('#OtherAddressTo').hide(effectTime);
-//        }
-//    });
-//    $('#Driver').change(function () {
-//        var value = $(this).is(':checked');
-//        if (value) {
-//            $('#DriverFields').show(effectTime);
-//        } else {
-//            $('#DriverFields').hide(effectTime);
-//        }
-//    });
-//    if ($('#LocationFrom').length > 0) {
-//        $('#LocationFrom').trigger('change');
-//        $('#LocationTo').trigger('change');
-//        $('#Driver').trigger('change');
-//    }
-//});
+});

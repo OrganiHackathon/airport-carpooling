@@ -42,6 +42,8 @@ namespace AirportCarpool.Services
                 if (schipholflight.ScheduleDate != DateTime.MinValue){
 
                     Flight flight = new Flight();
+                    flight.ArrDep = schipholflight.ArrDep;
+
                     if (schipholflight.ArrDep == "D")
                     {
                         flight.Departure = schipholflight.ScheduleDate + TimeSpan.Parse(schipholflight.ScheduleTime.ToLongTimeString());

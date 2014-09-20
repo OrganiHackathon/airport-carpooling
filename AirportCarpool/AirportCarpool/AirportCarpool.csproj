@@ -504,6 +504,7 @@
     <Content Include="Views\Trip\NewTrip03.cshtml" />
     <Content Include="Views\Trip\NewTrip04.cshtml" />
     <Content Include="Views\Trip\NewTripDefaultView.cshtml" />
+    <Content Include="Views\Trip\NewTrip02.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

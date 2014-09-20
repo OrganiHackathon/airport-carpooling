@@ -16,7 +16,19 @@ namespace AirportCarpool.Models {
         [DisplayFormat(DataFormatString = "{0:t}")]        
         public DateTime Departure { get; set; }
         [DisplayFormat(DataFormatString = "{0:t}")]        
-        public DateTime Arrival { get; set; }        
+        public DateTime Arrival { get; set; }
+
+        public string ArrDep { get; set; }
+
+        public string Summary() {
+            var time = "";
+            if (ArrDep == "D") {
+                time = Departure.ToShortTimeString();
+            } else {
+                time = Arrival.ToShortTimeString();
+            }
+            return FlightNumber + " - " + time;
+        }
 
     }
 }
