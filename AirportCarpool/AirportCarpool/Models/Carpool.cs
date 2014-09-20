@@ -17,6 +17,7 @@ namespace AirportCarpool.Models {
         public int MaxKm { get; set; }
         public DateTime Arrival { get; set; }
         public CarpoolStatus Status { get; set; }
+        public virtual IList<Movement> Movements { get; set; }
 
     }
 }
