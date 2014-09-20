@@ -163,6 +163,14 @@ namespace AirportCarpool.Controllers
             return View();
         }
 
+        //
+        // GET: /Account/UserProfile
+        [AllowAnonymous]
+        public ActionResult UserProfile()
+        {
+            return View();
+        }
+
         #region Status Codes
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)
         {
@@ -202,5 +210,7 @@ namespace AirportCarpool.Controllers
             }
         }
         #endregion
+
+        
     }
 }

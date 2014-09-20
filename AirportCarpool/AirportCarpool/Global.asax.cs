@@ -16,7 +16,7 @@ namespace AirportCarpool {
         protected void Application_Start() {
             AreaRegistration.RegisterAllAreas();
 
-            WebSecurity.InitializeDatabaseConnection("AirportCarpoolDbContext", "Users", "UserId", "UserName", true); 
+            // WebSecurity.InitializeDatabaseConnection("AirportCarpoolDbContext", "Users", "UserId", "UserName", true); 
             
             //WebApiConfig.Register(GlobalConfiguration.Configuration);
             GlobalConfiguration.Configure(WebApiConfig.Register);

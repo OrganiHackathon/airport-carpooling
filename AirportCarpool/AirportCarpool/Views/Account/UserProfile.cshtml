@@ -1,0 +1,22 @@
+﻿@{
+    ViewBag.Title = "Profile";
+}
+
+<div class="UserProfile">
+    
+    <ul data-role="listview" data-inset="true">
+        <li data-role="list-divider">Details</li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name)            
+        </li>
+        <li data-role="fieldcontain">
+            <input type="submit" value="Save" />
+        </li>
+    </ul>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
