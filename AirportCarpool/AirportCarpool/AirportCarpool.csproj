@@ -151,6 +151,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\CarpoolController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -179,6 +180,7 @@
     <Compile Include="Models\Location.cs" />
     <Compile Include="Models\Movement.cs" />
     <Compile Include="Models\MovementDetail.cs" />
+    <Compile Include="Models\NewMovement.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -480,6 +482,9 @@
     <Content Include="Views\Web.config">
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="Views\Carpool\NewMovement.cshtml" />
+    <Content Include="Views\Carpool\NewMovement3.cshtml" />
+    <Content Include="Views\Carpool\NewMovement2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
