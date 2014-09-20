@@ -6,7 +6,7 @@ using AirportCarpool.Models;
 
 namespace AirportCarpool.Services
 {
-    public class CarpoolService
+    public class CarpoolService: IDisposable
     {
         AirportCarpoolDbContext _db = new AirportCarpoolDbContext();
 
@@ -18,6 +18,7 @@ namespace AirportCarpool.Services
         public List<Carpool> FindCarpoolsByDateTime(DateTime arrival)
         {
 
+            
             List<Carpool> carpools = (from c in _db.Carpools
                                       // greater than arrival-time minus 2 hours
                                       where c.Status != CarpoolStatus.Full && (c.Arrival > arrival.Subtract(new TimeSpan(2, 0, 0)) && c.Arrival <= arrival)
@@ -25,6 +26,13 @@ namespace AirportCarpool.Services
 
 
             return carpools;
+        }
+
+
+        public void Dispose()
+        {
+            _db.Dispose();
+          
         }
     }
 }
