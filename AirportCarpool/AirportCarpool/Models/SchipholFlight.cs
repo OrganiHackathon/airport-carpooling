@@ -14,7 +14,7 @@ namespace AirportCarpool.Models
           [DataMember]
         public string FlightNumber { get; set; }
          [DataMember]
-        public string ArrDep { get; set; }
+          public string ArrDep { get; set; }
          [DataMember]
         public string Prefix { get; set; }
          [DataMember]

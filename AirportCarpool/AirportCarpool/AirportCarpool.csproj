@@ -55,6 +55,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Microsoft.Data.Edm.5.6.2\lib\net40\Microsoft.Data.Edm.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 11.0\Common7\IDE\PublicAssemblies\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Web.Helpers">
       <HintPath>..\packages\Microsoft.AspNet.WebHelpers.3.2.2\lib\net45\Microsoft.Web.Helpers.dll</HintPath>
     </Reference>
@@ -153,8 +157,9 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CarpoolController.cs" />
+    <Compile Include="Controllers\FlightController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SchipholFlightController.cs" />
+    <Compile Include="Controllers\TripController.cs" />
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -172,10 +177,12 @@
     <Compile Include="Models\Movement.cs" />
     <Compile Include="Models\MovementDetail.cs" />
     <Compile Include="Models\SchipholFlight.cs" />
-    <Compile Include="Models\NewMovement.cs" />
+    <Compile Include="Models\NewTrip.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\FlightService.cs" />
+    <Compile Include="Testing\TestClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\images\ajax-loader.gif" />
@@ -449,6 +456,7 @@
     <Content Include="Scripts\knockout-3.2.0.debug.js" />
     <Content Include="Scripts\knockout-3.2.0.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Site.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -488,9 +496,18 @@
     <Content Include="Views\User\EditUserProfile.cshtml" />
     <Content Include="Views\User\_UserProfile.cshtml" />
     <Content Include="Views\User\Index.cshtml" />
+    <Content Include="Views\Carpool\NewCarpool.cshtml" />
+    <Content Include="Views\Flight\FlightList.cshtml" />
+    <Content Include="Views\Carpool\MovementDetail.cshtml" />
+    <Content Include="Views\Trip\NewTrip01.cshtml" />
+    <Content Include="Views\Trip\NewTrip03.cshtml" />
+    <Content Include="Views\Trip\NewTrip04.cshtml" />
+    <Content Include="Views\Trip\NewTripDefaultView.cshtml" />
+    
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
