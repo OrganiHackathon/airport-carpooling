@@ -18,6 +18,6 @@ namespace AirportCarpool.Models {
         public int MaxKm { get; set; }
         public DateTime MovementDateTime { get; set; }
         public string MovementDateType { get; set; } // Departure / Arrival
-        public IList<MovementDetail> MovementDetails { get; set; }
+        public virtual IList<MovementDetail> MovementDetails { get; set; }
     }
 }

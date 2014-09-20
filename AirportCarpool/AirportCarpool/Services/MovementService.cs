@@ -15,11 +15,16 @@ namespace AirportCarpool.Services
 
         }
 
-        public List<Movement> FindMovementsByDateTime(DateTime departure)
+        public List<Movement> FindMovementsByDateTime(DateTime arrival)
         {
-            //return (from m in _db.Movements
-            //        where m.
-            //        select u).SingleOrDefault<User>();
+            IEnumerable<Carpool> carpools = from c in _db.Carpools
+                        // greater than arrival-time minus 2 hours
+                        where c.Status != CarpoolStatus.Full && (c.Arrival > arrival.Subtract(new TimeSpan(2, 0, 0)) && c.Arrival <= arrival)
+                        select c;
+            foreach (Carpool carpool in carpools)
+            {
+                
+            }
 
             return null;
         }
