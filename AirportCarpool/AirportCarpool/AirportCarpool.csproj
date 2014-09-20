@@ -155,21 +155,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201409172100240_ExtraFields.cs" />
-    <Compile Include="Migrations\201409172100240_ExtraFields.Designer.cs">
-      <DependentUpon>201409172100240_ExtraFields.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409172111395_Flight.cs" />
-    <Compile Include="Migrations\201409172111395_Flight.Designer.cs">
-      <DependentUpon>201409172111395_Flight.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409172122269_UserFlights.cs" />
-    <Compile Include="Migrations\201409172122269_UserFlights.Designer.cs">
-      <DependentUpon>201409172122269_UserFlights.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201409172123496_UserFlights2.cs" />
-    <Compile Include="Migrations\201409172123496_UserFlights2.Designer.cs">
-      <DependentUpon>201409172123496_UserFlights2.cs</DependentUpon>
+    <Compile Include="Migrations\201409201228368_Initial.cs" />
+    <Compile Include="Migrations\201409201228368_Initial.Designer.cs">
+      <DependentUpon>201409201228368_Initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountModels.cs" />
@@ -489,17 +477,8 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201409172100240_ExtraFields.resx">
-      <DependentUpon>201409172100240_ExtraFields.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409172111395_Flight.resx">
-      <DependentUpon>201409172111395_Flight.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409172122269_UserFlights.resx">
-      <DependentUpon>201409172122269_UserFlights.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201409172123496_UserFlights2.resx">
-      <DependentUpon>201409172123496_UserFlights2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201409201228368_Initial.resx">
+      <DependentUpon>201409201228368_Initial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
