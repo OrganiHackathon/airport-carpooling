@@ -174,6 +174,7 @@
     <Compile Include="Models\SchipholFlight.cs" />
     <Compile Include="Models\NewMovement.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -483,10 +484,13 @@
     <Content Include="Views\Carpool\NewMovement.cshtml" />
     <Content Include="Views\Carpool\NewMovement3.cshtml" />
     <Content Include="Views\Carpool\NewMovement2.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\User\EditUserProfile.cshtml" />
+    <Content Include="Views\User\_UserProfile.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

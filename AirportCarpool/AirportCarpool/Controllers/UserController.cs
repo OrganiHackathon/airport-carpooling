@@ -3,79 +3,99 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AirportCarpool.Models;
+using WebMatrix.WebData;
+
+using System.Web.Security;
+using System.Data.Entity;
 
 namespace AirportCarpool.Controllers
 {
     public class UserController : Controller
     {
-        //
-        // GET: /User/
-        public ActionResult Index()
+        AirportCarpoolDbContext _db = new AirportCarpoolDbContext();
+
+        [Authorize]
+        [HttpGet]
+        public ActionResult Index([Bind(Prefix = "id")] string userName)
+        {
+            User user = GetUserByUserName(userName);
+            return View(user);
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult Register()
         {
             return View();
         }
 
-        //
-        // GET: /User/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        //
-        // GET: /User/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-       
-        //
-        // GET: /User/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        //
-        // POST: /User/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Register(UserRegister model)
         {
-            try
+            User user;
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                //controle of user bestaat
+                if (!WebSecurity.UserExists(model.UserName))
+                {
+                    WebSecurity.CreateUserAndAccount(model.UserName, model.Password);
+                    Roles.AddUserToRole(model.UserName, "user"); //todo: roles niet hardcoden
 
-                return RedirectToAction("Index");
+                    //initialize al de rest van het userobject 
+
+                    user = GetUserByUserName(model.UserName);
+
+                    user.Email = model.Email;
+                    user.GSM = string.Empty;
+                    user.Name = string.Empty;
+                    user.SurName = string.Empty;
+                    _db.Entry(user).State = EntityState.Modified;
+                    _db.SaveChanges();
+
+                    WebSecurity.Login(model.UserName, model.Password);
+
+                }
             }
-            catch
-            {
-                return View();
-            }
+
+            return RedirectToAction("index", "home");
         }
 
-        //
-        // GET: /User/Delete/5
-        public ActionResult Delete(int id)
+        [Authorize]
+        [HttpGet]
+        public ActionResult EditUserProfile([Bind(Prefix = "id")] string userName)
         {
-            return View();
-        }
+            User user = GetUserByUserName(userName);
 
-        //
-        // POST: /User/Delete/5
+            return View(user);
+        }
+        [Authorize]
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
-        {
-            try
-            {
-                // TODO: Add delete logic here
+        public ActionResult UpdateUserProfile(User user) {
+            _db.Entry(user).State = EntityState.Modified;
+            _db.SaveChanges();
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index", "User", new { id = user.UserName });
+        }
+
+
+        [Authorize]
+        public ActionResult LogOff()
+        {
+            FormsAuthentication.SignOut();
+
+            return RedirectToAction("Index", "Home");
+        }
+
+        private User GetUserByUserName(string userName) {
+            return (from u in _db.Users
+                           where u.UserName == userName
+                           select u).SingleOrDefault<User>();
+        }
+        protected override void Dispose(bool disposing)
+        {
+            _db.Dispose();
+            base.Dispose(disposing);
         }
     }
 }

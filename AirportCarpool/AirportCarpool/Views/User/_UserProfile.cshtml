@@ -1,0 +1,27 @@
+﻿@model AirportCarpool.Models.User
+
+<div class="UserProfile">
+   
+    <ul data-role="listview" data-inset="true">
+        @Html.HiddenFor(m => m.UserId)
+        @Html.HiddenFor(m => m.UserName)
+
+        <li data-role="list-divider">Details</li>
+
+        
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.Name)
+            @Html.DisplayFor(m => m.Name)            
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.SurName, "Surname")
+            @Html.DisplayFor(m => m.SurName)            
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.Email)
+            @Html.DisplayFor(m => m.Email )           
+        </li>
+    </ul>
+    </div>
