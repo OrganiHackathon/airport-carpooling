@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AirportCarpool.Models;
+using AirportCarpool.Services;
 
 namespace AirportCarpool.Controllers {
     public class TripController : Controller {
@@ -27,16 +28,17 @@ namespace AirportCarpool.Controllers {
                         valid = false;
                     }
                     if (valid) {
-                        // TODO: 02 of 03?
-                        return View("NewTrip03", newTrip);
+                        SearchFlights(newTrip);
+                        return View("NewTrip02", newTrip);
                     }
 
                     // Invalid:
                     return View("NewTrip01", newTrip);
                 case "NewTrip02":
-                    if (ModelState.IsValid) {
+                    if (newTrip.FlightNumber != "") {
                         return View("NewTrip03", newTrip);
                     }
+                    SearchFlights(newTrip);
                     return View("NewTrip02", newTrip);
                 case "NewTrip03":
                     valid = ModelState.IsValid;
@@ -62,6 +64,39 @@ namespace AirportCarpool.Controllers {
             }
             // Unknown:
             return View(view, newTrip);
+        }
+
+        private void SearchFlights(NewTrip newTrip) {
+            var locationFrom = newTrip.LocationFrom;
+            var locationTo = newTrip.LocationTo;
+            FlightService flightService = new FlightService();
+            List<Flight> flights = flightService.SearchFlights(newTrip.MovementDate);
+            List<Flight> remove = new List<Flight>();
+            foreach (var flight in flights) {
+                if ((locationFrom == "Schiphol" && flight.ArrDep == "D") || (locationTo == "Schiphol" && flight.ArrDep == "A")) {
+                    remove.Add(flight);
+                } else {
+                    TimeSpan flightTime;
+                    TimeSpan minimum;
+                    TimeSpan maximum;
+                    if (flight.ArrDep == "A") {
+                        flightTime = flight.Arrival.TimeOfDay;
+                        minimum = newTrip.MovementTime.AddHours(-1).TimeOfDay;
+                        maximum = newTrip.MovementTime.AddHours(1).TimeOfDay;
+                    } else {
+                        flightTime = flight.Departure.TimeOfDay;
+                        minimum = newTrip.MovementTime.AddHours(1).TimeOfDay;
+                        maximum = newTrip.MovementTime.AddHours(3).TimeOfDay;
+                    }
+                    if (flightTime < minimum || flightTime > maximum) {
+                        remove.Add(flight);
+                    }
+                }
+            }
+            foreach (var flight in remove) {
+                flights.Remove(flight);
+            }
+            ViewBag.ListFlights = flights;
         }
 
         private void SaveNewTrip(NewTrip newTrip) {

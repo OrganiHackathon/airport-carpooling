@@ -1,0 +1,30 @@
+﻿@model AirportCarpool.Models.NewTrip
+
+@{
+    ViewBag.Title = "New trip - choose your flight";
+}
+
+@using (Html.BeginForm("NewTrip", "Trip", FormMethod.Post, new { @id = "SelectFlightForm" })) {
+    @Html.AntiForgeryToken()
+
+    <input type="hidden" name="View" value="NewTrip02" />
+    <input type="hidden" name="FlightNumber" id="FlightNumber" value="" />
+    <input type="hidden" name="Departure" id="Departure" value="" />
+    <input type="hidden" name="Arrival" id="Arrival" value="" />
+    <input type="hidden" name="ArrDep" id="ArrDep" value="" />
+
+    <ul data-role="listview" data-theme="c" data-filter="true">
+
+        @foreach (AirportCarpool.Models.Flight item in ViewBag.ListFlights) {   
+            <li data-icon="arrow-r" data-iconpos="r">
+                @Html.ActionLink(item.Summary(), "NewTrip", "Trip", null, new {
+                    @class = "SelectFlightLink",
+                    @data_flightnr = item.FlightNumber,
+                    @data_departure = item.Departure,
+                    @data_arrival = item.Arrival,
+                    @data_arrdep = item.ArrDep
+           })
+            </li>   
+        }
+    </ul>
+}
