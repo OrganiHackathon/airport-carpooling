@@ -6,10 +6,10 @@
         <meta name="viewport" content="width=device-width" />
         <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
         @Styles.Render("~/Content/mobileCss", "~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")
+        @Scripts.Render("~/bundles/jquery", "~/bundles/modernizr")
     </head>
     <body>
-        <div data-role="page" data-theme="b">
+        <div data-role="page" data-theme="a">
             <div data-role="header">
                 @if (IsSectionDefined("Header")) {
                     @RenderSection("Header")
@@ -23,7 +23,6 @@
             </div>
         </div>
 
-        @Scripts.Render("~/bundles/jquery")
         <script>
             $(document).on("mobileinit", function () {
                 $.mobile.ajaxEnabled = false;
