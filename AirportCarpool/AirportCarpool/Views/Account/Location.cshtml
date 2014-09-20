@@ -1,0 +1,42 @@
+﻿@model AirportCarpool.Models.Location
+@{
+    ViewBag.Title = "Address";
+}
+ 
+<div class="Address">
+    
+    <ul data-role="listview" data-inset="true">
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.Country)
+            @Html.TextBoxFor(m => m.Country)            
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.PostalCode, "Postal code")
+            @Html.TextBoxFor(m => m.PostalCode)            
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.City)
+            @Html.TextBoxFor(m => m.City)            
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.Street)
+            @Html.TextBoxFor(m => m.Street)            
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.StreetNr)
+            @Html.TextBoxFor(m => m.StreetNr)            
+        </li>
+
+        <li data-role="fieldcontain">
+            <input type="submit" value="Save" />
+        </li>
+    </ul>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

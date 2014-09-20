@@ -165,7 +165,7 @@ namespace AirportCarpool.Controllers
 
         //
         // GET: /Account/UserProfile
-        [AllowAnonymous]
+        // [AllowAnonymous]
         public ActionResult UserProfile()
         {
             return View();
@@ -173,7 +173,7 @@ namespace AirportCarpool.Controllers
 
         //
         // GET: /Account/Location
-        [AllowAnonymous]
+        // [AllowAnonymous]
         public ActionResult Location()
         {
             return View();

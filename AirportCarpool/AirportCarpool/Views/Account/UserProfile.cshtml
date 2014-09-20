@@ -28,16 +28,15 @@
             @Html.LabelFor(m => m.Email)
             @Html.TextBoxFor(m => m.Email)            
         </li>
-
-        <li> 
-            @Html.ActionLink("Address", "Location", "Shared", null, new { @data_role = "button" })
-        </li>
-
+    </ul>
+    <p>@Html.ActionLink("Address", "Location", "Account", null, new { @data_role = "button" })</p>
+    <p>@Html.ActionLink("Change password", "ChangePassword", "Account", routeValues: null, htmlAttributes: new { data_icon = "gear" })</p>
+    <ul data-role="listview" data-inset="true">
         <li data-role="fieldcontain">
             <input type="submit" value="Save" />
         </li>
     </ul>
-    <p>@Html.ActionLink("Change password", "ChangePassword", "Account", routeValues: null, htmlAttributes: new { data_icon = "gear" })</p>
+    
 </div>
 
 @section Scripts {
