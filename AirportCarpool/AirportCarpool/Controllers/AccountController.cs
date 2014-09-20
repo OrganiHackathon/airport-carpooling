@@ -111,7 +111,7 @@ namespace AirportCarpool.Controllers
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, createPersistentCookie: false);
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("EditUserProfile", "User");
                 }
                 else
                 {

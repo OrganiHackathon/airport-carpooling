@@ -179,8 +179,10 @@
     <Compile Include="Models\SchipholFlight.cs" />
     <Compile Include="Models\NewTrip.cs" />
     <Compile Include="Models\User.cs" />
+    <Compile Include="Models\UserRegister.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\FlightService.cs" />
+    <Compile Include="Services\MovementService.cs" />
     <Compile Include="Testing\TestClass.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -491,6 +493,10 @@
     <Content Include="Views\Carpool\NewMovement.cshtml" />
     <Content Include="Views\Carpool\NewMovement3.cshtml" />
     <Content Include="Views\Carpool\NewMovement2.cshtml" />
+    <Content Include="Views\User\Register.cshtml" />
+    <Content Include="Views\User\EditUserProfile.cshtml" />
+    <Content Include="Views\User\_UserProfile.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Carpool\NewCarpool.cshtml" />
     <Content Include="Views\Flight\FlightList.cshtml" />
     <Content Include="Views\Carpool\MovementDetail.cshtml" />
@@ -502,7 +508,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\User\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,0 +1,49 @@
+﻿@model AirportCarpool.Models.User
+
+@{
+    ViewBag.Title = "EditUserProfile";
+}
+
+<h2>Edit User Profile for user: @Model.UserName </h2>
+
+<div class="UserProfile">
+    @Html.AntiForgeryToken()
+    @using(@Html.BeginForm("UpdateUserProfile","User",FormMethod.Post)){
+    <ul data-role="listview" data-inset="true">
+        @Html.HiddenFor(m => m.UserId)
+        @Html.HiddenFor(m => m.UserName)
+
+        <li data-role="list-divider">Details</li>
+
+        
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.Name)
+            @Html.TextBoxFor(m => m.Name)            
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.SurName, "Surname")
+            @Html.TextBoxFor(m => m.SurName)            
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email)            
+        </li>
+    </ul>
+    
+
+    <p>@Html.ActionLink("Address", "Location", "Account", new {id = Model.UserId} ,  new { @data_role = "button" })</p>
+    <p>@Html.ActionLink("Back", "Index", "User", new {id = Model.UserName}  , new { @data_role = "button" })</p>
+    <!--<p>@Html.ActionLink("Change password", "ChangePassword", "Account", routeValues: Model, htmlAttributes: new {  data_icon = "gear" })</p>-->
+    <ul data-role="listview" data-inset="true">
+        <li data-role="fieldcontain">                   
+            <input type="submit" value="Save" />
+        </li>
+    </ul>
+    }
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
