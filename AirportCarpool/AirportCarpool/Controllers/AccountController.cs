@@ -180,6 +180,22 @@ namespace AirportCarpool.Controllers
             return View();
         }
 
+        //
+        // GET: /Account/UserProfile
+        [AllowAnonymous]
+        public ActionResult UserProfile()
+        {
+            return View();
+        }
+
+        //
+        // GET: /Account/Location
+        [AllowAnonymous]
+        public ActionResult Location()
+        {
+            return View();
+        }
+
         #region Status Codes
         private static string ErrorCodeToString(MembershipCreateStatus createStatus)
         {
