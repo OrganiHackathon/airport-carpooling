@@ -38,9 +38,11 @@ namespace AirportCarpool.Models
 
         public string SeatsLeftString()
         {
-
-
-            return "Only " + SeatsLeft().ToString() + " left, hurry up!";
+            int count = SeatsLeft();
+            if (count > 0)
+                return "Only " + SeatsLeft().ToString() + " left, hurry up!";
+            else
+                return "No seats left";
         }
 
 
