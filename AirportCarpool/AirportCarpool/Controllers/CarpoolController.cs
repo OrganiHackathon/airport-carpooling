@@ -77,6 +77,14 @@ namespace AirportCarpool.Controllers {
             return View(carpool);
         }
 
+        public ActionResult CarpoolHistory()
+        {
+            CarpoolService carpoolService = new CarpoolService();
+            List<Carpool> carpools = carpoolService.FindMyCarpools();
+            
+            return View(carpools);
+        }
+
         public ActionResult AddMovementToCarpool(Carpool selectedCarpool, Movement newMovement)
         {
             CarpoolService carpoolService = new CarpoolService();

@@ -41,6 +41,15 @@ namespace AirportCarpool.Services
 
         }
 
+        public List<Carpool> FindMyCarpools()
+        {
+
+            return (from c in _db.Carpools                   
+                    select c).ToList<Carpool>();
+
+        }
+
+        
         public Movement FindMovementById(int Id)
         {
 
