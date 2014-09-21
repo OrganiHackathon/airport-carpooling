@@ -56,13 +56,13 @@ namespace AirportCarpool.Controllers {
         }
 
         
-        public ActionResult FindCarpoolsByDate(Movement newMovement)
+        public ActionResult FindCarpoolsByDate(int movementId)
         {
             CarpoolService carpoolService = new CarpoolService();
             List<Carpool> carpools;
 
             
-            // voor test          
+            // voor test
 
             carpools = carpoolService.FindCarpoolsByDateTime(newMovement.MovementDateTime);
             ViewData["newMovement"] = newMovement;
