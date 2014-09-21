@@ -41,6 +41,17 @@ namespace AirportCarpool.Services
 
         }
 
+        public Movement FindMovementById(int Id)
+        {
+
+            return (from m in _db.Movements
+                    // greater than arrival-time minus 2 hours
+                    where m.MovementId == Id
+                    select m).SingleOrDefault<Movement>();
+
+
+        }
+
         public Carpool AddMovementToCarpool(Carpool carpool, Movement movement)
         {
             if (carpool != null && movement != null)
