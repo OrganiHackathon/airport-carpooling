@@ -48,7 +48,12 @@ legend {
     font-weight: bold;
 }
 
-.h2
-{
-    font-family : "segoe";
+html, body, input, button {
+    font-family: "Segoe UI", sans-serif !important;
+}
+div[data-role="header"] {
+    background-color: rgb(225, 225, 255) !important;
+}
+a[data-role="button"] {
+    border-color: rgb(200, 200, 220) !important;
 }

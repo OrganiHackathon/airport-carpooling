@@ -15,8 +15,8 @@
     @Html.HiddenFor(model => model.MovementDate);
     @Html.HiddenFor(model => model.MovementTime);
     @Html.HiddenFor(model => model.FlightNumber);
-    @Html.HiddenFor(model => model.Departure);
-    @Html.HiddenFor(model => model.Arrival);
+    <input type="hidden" name="Departure" value="@Html.Raw(Model.Departure)">
+    <input type="hidden" name="Arrival" value="@Html.Raw(Model.Arrival)">
     @Html.HiddenFor(model => model.ArrDep);
     @Html.HiddenFor(model => model.Driver);
     @Html.HiddenFor(model => model.Passenger);
