@@ -53,7 +53,7 @@ namespace AirportCarpool.Controllers {
                             return View("NewTrip04", newTrip);
                         } else {
                             var movement = SaveNewTrip(newTrip);
-                            return RedirectToAction("FindCarpoolsByDate", "Carpool", "MovementId=" + movement.MovementId);
+                            return RedirectToAction("FindCarpoolsByDate", "Carpool", new { movementId = movement.MovementId });
                         }
                     }
                     return View("NewTrip03", newTrip);
@@ -145,6 +145,18 @@ namespace AirportCarpool.Controllers {
             movement.MovementDateTime = newTrip.MovementDate.Add(newTrip.MovementTime.TimeOfDay);
             movement.MovementDateType = newTrip.MovementDateType;
 
+            if (movement.Driver) {
+                var carpool = new Carpool();
+                carpool.Status = CarpoolStatus.New;
+                carpool.MaxKm = newTrip.MaxKm;
+                carpool.MaxSeats = newTrip.MaxSeats;
+                carpool.MaxLuggage = newTrip.MaxLuggage;
+                carpool.Arrival = movement.MovementDateTime;
+                db.Entry(carpool).State = EntityState.Added;
+                carpool.Movements = new List<Movement>();
+                carpool.Movements.Add(movement);
+            }
+
             db.SaveChanges();
             db.Dispose();
 
@@ -163,10 +175,7 @@ namespace AirportCarpool.Controllers {
                 db.Dispose();
             }
 
-            //if (movement.Driver) {
-            //    var carpool = new Carpool();
-            //    carpool.Status = CarpoolStatus.New;
-            //}
+            
 
             return movement;
         }
