@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AirportCarpool.Models;
+using AirportCarpool.Services;
 
 namespace AirportCarpool.Controllers {
     public class CarpoolController : Controller {
@@ -52,6 +53,36 @@ namespace AirportCarpool.Controllers {
         {
             return View("MovementDetail","");
          
+        }
+
+        
+        public ActionResult FindCarpoolsByDate(/*Movement newMovement*/)
+        {
+            CarpoolService carpoolService = new CarpoolService();
+            List<Carpool> carpools;
+
+            
+            // voor test
+            Movement newMovement = new Movement();
+            newMovement.MovementDateTime = DateTime.Now;
+
+            carpools = carpoolService.FindCarpoolsByDateTime(newMovement.MovementDateTime);
+            ViewData["newMovement"] = newMovement;
+            return View("CarpoolList", carpools);         
+        }
+
+        public ActionResult Details(int id)
+        {
+            CarpoolService carpoolService = new CarpoolService();
+            Carpool carpool = carpoolService.FindCarpoolById(id);
+            return View(carpool);
+        }
+
+        public ActionResult AddMovementToCarpool(Carpool selectedCarpool, Movement newMovement)
+        {
+            CarpoolService carpoolService = new CarpoolService();
+            Carpool newCarpool = carpoolService.AddMovementToCarpool(selectedCarpool, newMovement);
+            return View(newCarpool);
         }
     }
 }

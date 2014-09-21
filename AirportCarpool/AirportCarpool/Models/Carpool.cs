@@ -3,14 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace AirportCarpool.Models {
+namespace AirportCarpool.Models
+{
 
-    public enum CarpoolStatus{
-        Full,       
+    public enum CarpoolStatus
+    {
+        Full,
         New
     }
 
-    public class Carpool {
+    public class Carpool
+    {
         public int CarpoolId { get; set; }
         public int MaxSeats { get; set; }
         public int MaxLuggage { get; set; }
@@ -19,5 +22,45 @@ namespace AirportCarpool.Models {
         public CarpoolStatus Status { get; set; }
         public virtual IList<Movement> Movements { get; set; }
 
+
+        public int SeatsLeft()
+        {
+            int viTotalSeatsTaken = 0;
+
+            foreach (Movement movement in Movements)
+            {
+                viTotalSeatsTaken += movement.Seats;
+            }
+
+
+            return (MaxSeats - viTotalSeatsTaken);
+        }
+
+        public string SeatsLeftString()
+        {
+
+
+            return "Only " + SeatsLeft().ToString() + " left, hurry up!";
+        }
+
+
+        public string getColor()
+        {
+            int viTotalSeatsLeft = SeatsLeft();
+
+            if (viTotalSeatsLeft <= 0)
+            {
+                return "red";
+            }
+            else if (viTotalSeatsLeft == 1)
+            {
+                return "orange";
+            }
+            else
+            {
+                return "green";
+            }
+            
+        }
     }
 }

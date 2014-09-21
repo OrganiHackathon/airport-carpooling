@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using AirportCarpool.Models;
@@ -18,15 +19,40 @@ namespace AirportCarpool.Services
         public List<Carpool> FindCarpoolsByDateTime(DateTime arrival)
         {
 
-            
+            DateTime arrivalMin2hours = arrival.AddHours(-2);
+
             List<Carpool> carpools = (from c in _db.Carpools
                                       // greater than arrival-time minus 2 hours
-                                      where c.Status != CarpoolStatus.Full && (c.Arrival > arrival.Subtract(new TimeSpan(2, 0, 0)) && c.Arrival <= arrival)
+                                      where c.Status != CarpoolStatus.Full && (c.Arrival > arrivalMin2hours && c.Arrival <= arrival)
                                       select c).ToList<Carpool>();
 
 
             return carpools;
         }
+
+        public Carpool FindCarpoolById(int Id)
+        {
+
+            return (from c in _db.Carpools
+                            // greater than arrival-time minus 2 hours
+                            where c.CarpoolId == Id
+                            select c).SingleOrDefault<Carpool>();
+
+
+        }
+
+        public Carpool AddMovementToCarpool(Carpool carpool, Movement movement)
+        {
+            if (carpool != null && movement != null)
+            {
+                _db.Entry(carpool).State = EntityState.Modified;
+                _db.SaveChanges();
+            }
+          
+         
+            return null;
+        }
+
 
 
         public void Dispose()

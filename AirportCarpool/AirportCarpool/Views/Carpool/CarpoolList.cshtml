@@ -1,0 +1,30 @@
+﻿@model IEnumerable<AirportCarpool.Models.Carpool>
+
+@{
+    ViewBag.Title = "Carpools";
+}
+
+<h2>Find carpoolbuddies!</h2>
+
+
+
+<ul data-role="listview" data-theme ="c" >
+
+@foreach (var item in Model) {   
+     
+        <li style="background-color: @item.getColor();color:white;">                
+           <h2>@Html.DisplayFor(modelItem => item.Status)</h2>
+           <p><strong>Arrives on: @Html.DisplayFor(modelItem => item.Arrival)</strong></p>
+           <p><strong>Max. luggage:  @Html.DisplayFor(modelItem => item.MaxLuggage)</strong></p>
+           <p><strong>Max. seats:  @Html.DisplayFor(modelItem => item.MaxSeats)</strong></p>   
+           <p><i>@item.SeatsLeftString()</i>    
+               
+           <p>@Html.ActionLink("Select", "AddMovementToCarpool", "Carpool",new {selectedCarpool = @item,newMovement = @ViewData["newMovement"] },null)</p>   
+        </li>   
+    
+}
+</ul>
+
+}
+
+
