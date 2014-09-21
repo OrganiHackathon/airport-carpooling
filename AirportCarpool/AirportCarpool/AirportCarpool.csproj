@@ -186,6 +186,7 @@
     <Compile Include="Services\CarpoolService.cs" />
     <Compile Include="Services\FlightService.cs" />
     <Compile Include="Services\MovementService.cs" />
+    <Compile Include="Services\TomTomService.cs" />
     <Compile Include="Testing\TestClass.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -511,6 +512,9 @@
     <Content Include="Views\Shared\_LocationDetails.cshtml" />
     <Content Include="Views\Shared\_LocationEdit.cshtml" />
     <Content Include="Views\User\UserLocation.cshtml" />
+    <Content Include="Views\Carpool\CarpoolList.cshtml" />
+    <Content Include="Views\Carpool\Details.cshtml" />
+    <Content Include="Views\Carpool\AddMovementToCarpool.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Location.cshtml" />
   </ItemGroup>
   <ItemGroup>
