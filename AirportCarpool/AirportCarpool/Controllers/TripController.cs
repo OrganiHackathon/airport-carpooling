@@ -118,7 +118,6 @@ namespace AirportCarpool.Controllers {
             }
             if (locationFrom != null) {
                 db.Entry(locationFrom).State = EntityState.Added;
-                //db.SaveChanges();
             }
             movement.LocationFrom = locationFrom;
 
@@ -130,7 +129,6 @@ namespace AirportCarpool.Controllers {
             }
             if (locationTo != null) {
                 db.Entry(locationTo).State = EntityState.Added;
-                //db.SaveChanges();
             }
             movement.LocationTo = locationTo;
 
@@ -146,21 +144,23 @@ namespace AirportCarpool.Controllers {
             movement.MovementDateTime = newTrip.MovementDate.Add(newTrip.MovementTime.TimeOfDay);
             movement.MovementDateType = newTrip.MovementDateType;
 
-            //if (newTrip.FlightNumber != "") {
-            //    Flight flight = new Flight {
-            //        FlightNumber = newTrip.FlightNumber,
-            //        ArrDep = newTrip.ArrDep,
-            //        Arrival = newTrip.Arrival,
-            //        Departure = newTrip.Departure,
-            //        Date = newTrip.MovementDate
-            //    };
-            //    flight.Movement = movement;
-            //    //movement.MovementDetails = new List<MovementDetail>();
-            //    //movement.MovementDetails.Add(flight);
-            //    db.Entry(flight).State = EntityState.Added;
-            //}
-            
             db.SaveChanges();
+            db.Dispose();
+
+            if (newTrip.FlightNumber != "") {
+                db = new AirportCarpoolDbContext();
+                Flight flight = new Flight {
+                    FlightNumber = newTrip.FlightNumber,
+                    ArrDep = newTrip.ArrDep,
+                    Arrival = newTrip.Arrival,
+                    Departure = newTrip.Departure,
+                    Date = newTrip.MovementDate,
+                    MovementId = movement.MovementId
+                };
+                db.Entry(flight).State = EntityState.Added;
+                db.SaveChanges();
+                db.Dispose();
+            }
 
             return movement;
         }
