@@ -52,15 +52,15 @@ namespace AirportCarpool.Models
 
             if (viTotalSeatsLeft <= 0)
             {
-                return "red";
+                return "#ef1010";
             }
             else if (viTotalSeatsLeft == 1)
             {
-                return "orange";
+                return "#ff9730";
             }
             else
             {
-                return "green";
+                return "#33912d";
             }
             
         }
