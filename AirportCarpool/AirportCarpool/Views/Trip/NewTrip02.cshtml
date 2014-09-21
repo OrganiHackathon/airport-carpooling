@@ -8,6 +8,11 @@
     @Html.AntiForgeryToken()
 
     <input type="hidden" name="View" value="NewTrip02" />
+    @Html.HiddenFor(model => model.LocationFrom);
+    @Html.HiddenFor(model => model.LocationTo);
+    @Html.HiddenFor(model => model.MovementDateType);
+    @Html.HiddenFor(model => model.MovementDate);
+    @Html.HiddenFor(model => model.MovementTime);
     <input type="hidden" name="FlightNumber" id="FlightNumber" value="" />
     <input type="hidden" name="Departure" id="Departure" value="" />
     <input type="hidden" name="Arrival" id="Arrival" value="" />

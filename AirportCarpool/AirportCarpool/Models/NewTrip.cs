@@ -87,7 +87,10 @@ namespace AirportCarpool.Models {
         public DateTime Departure { get; set; }
 
         [DisplayFormat(DataFormatString = "{0:t}")]
-        public DateTime Arrival { get; set; }        
+        public DateTime Arrival { get; set; }
+
+        public string ArrDep { get; set; }
+
 
         public NewTrip() {
             Seats = 1;
