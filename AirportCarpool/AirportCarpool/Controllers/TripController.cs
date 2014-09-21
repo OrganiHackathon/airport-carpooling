@@ -52,14 +52,15 @@ namespace AirportCarpool.Controllers {
                         if (newTrip.Driver) {
                             return View("NewTrip04", newTrip);
                         } else {
-                            SaveNewTrip(newTrip);
+                            var movement = SaveNewTrip(newTrip);
+                            return RedirectToAction("FindCarpoolsByDate", "Carpool", "MovementId=" + movement.MovementId);
                         }
                     }
                     return View("NewTrip03", newTrip);
                 case "NewTrip04":
                     if (ModelState.IsValid) {
-                        SaveNewTrip(newTrip);
-                        return RedirectToAction("Index", "Home");
+                        var movement = SaveNewTrip(newTrip);
+                        return RedirectToAction("FindCarpoolsByDate", "Carpool", "MovementId=" + movement.MovementId);
                     }
                     return View("NewTrip04", newTrip);
 
