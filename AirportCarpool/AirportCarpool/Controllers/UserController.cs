@@ -8,6 +8,7 @@ using WebMatrix.WebData;
 
 using System.Web.Security;
 using System.Data.Entity;
+using AirportCarpool.Services;
 
 namespace AirportCarpool.Controllers
 {
@@ -79,6 +80,9 @@ namespace AirportCarpool.Controllers
 
             user.FillFromViewModel(userVM);
 
+            GeoCodeService geoCoder = new GeoCodeService();
+            user.Location.Geolocation = geoCoder.AdressToGeoCode(user.Location.Street, user.Location.StreetNr, user.Location.PostalCode, user.Location.Country);
+            
             _db.Entry(user).State = EntityState.Modified;
            
             _db.SaveChanges();
