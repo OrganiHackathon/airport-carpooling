@@ -185,6 +185,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CarpoolService.cs" />
     <Compile Include="Services\FlightService.cs" />
+    <Compile Include="Services\GeoCodeService.cs" />
     <Compile Include="Services\MovementService.cs" />
     <Compile Include="Services\TomTomService.cs" />
     <Compile Include="Testing\TestClass.cs" />
