@@ -29,7 +29,7 @@
             @Html.TextBoxFor(m => m.Email)            
         </li>
     </ul>
-    <p>@Html.ActionLink("Address", "Location", "Account", null, new { @data_role = "button" })</p>
+    <p>@Html.ActionLink("Address", "Location", "User", Model.Location, new { @data_role = "button" })</p>
     <p>@Html.ActionLink("Change password", "ChangePassword", "Account", routeValues: null, htmlAttributes: new { data_icon = "gear" })</p>
     <ul data-role="listview" data-inset="true">
         <li data-role="fieldcontain">
