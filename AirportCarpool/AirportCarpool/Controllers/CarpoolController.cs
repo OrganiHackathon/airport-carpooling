@@ -63,8 +63,6 @@ namespace AirportCarpool.Controllers {
 
             
             // voor test
-            //Movement newMovement = new Movement();
-            //newMovement.MovementDateTime = DateTime.Now;
 
             carpools = carpoolService.FindCarpoolsByDateTime(newMovement.MovementDateTime);
             ViewData["newMovement"] = newMovement;

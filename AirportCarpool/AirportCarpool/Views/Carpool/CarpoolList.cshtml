@@ -12,7 +12,7 @@
 
 @foreach (var item in Model) {   
      
-        <li style="background-color: @item.getColor();color:white;">                
+        <li data-icon="arrow-r" data-iconpos="r" style="background-color: @item.getColor();color:white;">                
            <h2>@Html.DisplayFor(modelItem => item.Status)</h2>
            <p><strong>Arrives on: @Html.DisplayFor(modelItem => item.Arrival)</strong></p>
            <p><strong>Max. luggage:  @Html.DisplayFor(modelItem => item.MaxLuggage)</strong></p>
@@ -26,5 +26,4 @@
 </ul>
 
 }
-
 
