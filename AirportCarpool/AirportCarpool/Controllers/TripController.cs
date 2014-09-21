@@ -60,7 +60,7 @@ namespace AirportCarpool.Controllers {
                 case "NewTrip04":
                     if (ModelState.IsValid) {
                         var movement = SaveNewTrip(newTrip);
-                        return RedirectToAction("FindCarpoolsByDate", "Carpool", "MovementId=" + movement.MovementId);
+                        return RedirectToAction("FindCarpoolsByDate", "Carpool", new { movementId = movement.MovementId });
                     }
                     return View("NewTrip04", newTrip);
 
@@ -162,6 +162,11 @@ namespace AirportCarpool.Controllers {
                 db.SaveChanges();
                 db.Dispose();
             }
+
+            //if (movement.Driver) {
+            //    var carpool = new Carpool();
+            //    carpool.Status = CarpoolStatus.New;
+            //}
 
             return movement;
         }
