@@ -13,14 +13,11 @@
         <dt>
             @Html.DisplayNameFor(model => model.UserName)
         </dt>
-
-       
-
     </dl>
 
 </div>
 <div id="UserLocation">
-        @Html.Action("Details", "Location", Model.Location.LocationId);
+        @Html.Partial("_LocationDetails", Model.Location);
 
 </div>
 <p>

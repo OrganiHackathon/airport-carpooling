@@ -1,4 +1,4 @@
-﻿@model AirportCarpool.Models.User
+﻿@model AirportCarpool.Models.UserViewModel
 
 @{
     ViewBag.Title = "Your Account";
@@ -15,8 +15,10 @@
 
 @Html.Partial("_UserProfile", Model)
 
+@*@Html.Partial("_LocationDetails", Model.Location)*@
+
 <ul data-role="listview" data-inset="true">
-    <li>@Html.ActionLink("Edit", "EditUserProfile", new { id = Model.UserName },null)</li>
+    <li>@Html.ActionLink("Edit", "EditUserProfile",Model,null)</li>
     <li>@Html.ActionLink("Change password", "ChangePassword")</li>
     <li>@Html.ActionLink("Log off", "LogOff")</li>
 </ul>

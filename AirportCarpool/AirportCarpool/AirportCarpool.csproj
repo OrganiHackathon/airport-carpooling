@@ -181,6 +181,7 @@
     <Compile Include="Models\NewTrip.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserRegister.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\CarpoolService.cs" />
     <Compile Include="Services\FlightService.cs" />
@@ -508,15 +509,17 @@
     <Content Include="Views\Trip\NewTrip04.cshtml" />
     <Content Include="Views\Trip\NewTripDefaultView.cshtml" />
     <Content Include="Views\Trip\NewTrip02.cshtml" />
-    <Content Include="Views\Location\_Details.cshtml" />
-    <Content Include="Views\Location\_Edit.cshtml" />
+    <Content Include="Views\Shared\_LocationDetails.cshtml" />
+    <Content Include="Views\Shared\_LocationEdit.cshtml" />
     <Content Include="Views\User\UserLocation.cshtml" />
     <Content Include="Views\Carpool\CarpoolList.cshtml" />
     <Content Include="Views\Carpool\Details.cshtml" />
     <Content Include="Views\Carpool\AddMovementToCarpool.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Location.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Location\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

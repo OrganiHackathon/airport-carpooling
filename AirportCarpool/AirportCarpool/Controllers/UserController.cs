@@ -20,7 +20,7 @@ namespace AirportCarpool.Controllers
         public ActionResult Index([Bind(Prefix = "id")] string userName)
         {
             User user = GetUserByUserName(userName);
-            return View(user);
+            return View(user.ViewModel());
         }
 
         [HttpGet]
@@ -63,16 +63,24 @@ namespace AirportCarpool.Controllers
 
         [Authorize]
         [HttpGet]
-        public ActionResult EditUserProfile([Bind(Prefix = "id")] string userName)
+        public ActionResult EditUserProfile(UserViewModel userVM)
         {
-            User user = GetUserByUserName(userName);
-
-            return View(user);
+            //todo: locationid gaat hier verloren
+            //if (user.Location == null && loc != null) {
+            //    user.Location = loc;
+            //}
+            return View(userVM);
         }
         [Authorize]
         [HttpPost]
-        public ActionResult UpdateUserProfile(User user) {
+        public ActionResult UpdateUserProfile(UserViewModel userVM)
+        {
+            User user = GetUserByUserName(userVM.UserName);
+
+            user.FillFromViewModel(userVM);
+
             _db.Entry(user).State = EntityState.Modified;
+           
             _db.SaveChanges();
 
             return RedirectToAction("Index", "User", new { id = user.UserName });
@@ -87,15 +95,29 @@ namespace AirportCarpool.Controllers
             return RedirectToAction("Index", "Home");
         }
         [Authorize]
-        public ActionResult UserLocation(User user) {
+        public ActionResult UserLocation(User user)
+        {
             return View(user);
         }
 
-        private User GetUserByUserName(string userName) {
-            return (from u in _db.Users
-                           where u.UserName == userName
-                           select u).SingleOrDefault<User>();
+        private User GetUserByUserName(string userName)
+        {
+            
+            User user = _db.Users.Include(u => u.Location).Where(u => u.UserName == userName).Single<User>();
+            if (user.Location == null)
+            {
+                user.Location = new Location();
+                _db.SaveChanges();
+            }
+
+            //return (from u in _db.Users
+            //               where u.UserName == userName
+            //               select u).SingleOrDefault<User>();
+
+
+            return user;
         }
+
         protected override void Dispose(bool disposing)
         {
             _db.Dispose();
