@@ -1,27 +1,62 @@
-﻿@model AirportCarpool.Models.User
+﻿@model AirportCarpool.Models.UserViewModel
 
 <div class="UserProfile">
-   
+
     <ul data-role="listview" data-inset="true">
         @Html.HiddenFor(m => m.UserId)
         @Html.HiddenFor(m => m.UserName)
 
         <li data-role="list-divider">Details</li>
 
-        
+
         <li data-role="fieldcontain">
             @Html.LabelFor(m => m.Name)
-            @Html.DisplayFor(m => m.Name)            
+            @Html.DisplayFor(m => m.Name)
         </li>
 
         <li data-role="fieldcontain">
             @Html.LabelFor(m => m.SurName, "Surname")
-            @Html.DisplayFor(m => m.SurName)            
+            @Html.DisplayFor(m => m.SurName)
         </li>
 
         <li data-role="fieldcontain">
             @Html.LabelFor(m => m.Email)
-            @Html.DisplayFor(m => m.Email )           
+            @Html.DisplayFor(m => m.Email)
         </li>
     </ul>
-    </div>
+</div>
+
+<div>
+    <ul data-role="listview" data-inset="true">
+
+        <li data-role="list-divider">Adress</li>
+
+        @Html.HiddenFor(l => l.LocationId)
+
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(l => l.Street)
+            @Html.DisplayFor(l => l.Street)
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(l => l.StreetNr)
+            @Html.DisplayFor(l => l.StreetNr)
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(l => l.PostalCode)
+            @Html.DisplayFor(l => l.PostalCode)
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(l => l.City)
+            @Html.DisplayFor(l => l.City)
+        </li>
+
+        <li data-role="fieldcontain">
+            @Html.LabelFor(l => l.Country)
+            @Html.DisplayFor(l => l.Country)
+        </li>
+    </ul>
+</div>

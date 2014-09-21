@@ -13,10 +13,6 @@ namespace AirportCarpool.Models {
         public string Country { get; set; }
         public string Geolocation { get; set; }
 
-        public Location() {
-
-        }
-
         public static Location GetCopy(Location location) {
             return new Location {
                 Street = location.Street,
@@ -36,6 +32,14 @@ namespace AirportCarpool.Models {
                 City = "Schiphol",
                 Country = "Nederland"
             };
+        }
+        public Location() {
+            Street = string.Empty;
+            StreetNr = string.Empty;
+            PostalCode = string.Empty;
+            City = string.Empty;
+            Country = string.Empty;
+            Geolocation = string.Empty;
         }
     }
 }
