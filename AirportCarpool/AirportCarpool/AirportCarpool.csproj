@@ -516,6 +516,7 @@
     <Content Include="Views\Carpool\Details.cshtml" />
     <Content Include="Views\Carpool\AddMovementToCarpool.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Location.cshtml" />
+    <Content Include="Views\Carpool\CarpoolHistory.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
