@@ -508,7 +508,6 @@
     <Content Include="Views\Trip\NewTrip01.cshtml" />
     <Content Include="Views\Trip\NewTrip03.cshtml" />
     <Content Include="Views\Trip\NewTrip04.cshtml" />
-    <Content Include="Views\Trip\NewTripDefaultView.cshtml" />
     <Content Include="Views\Trip\NewTrip02.cshtml" />
     <Content Include="Views\Shared\_LocationDetails.cshtml" />
     <Content Include="Views\Shared\_LocationEdit.cshtml" />
